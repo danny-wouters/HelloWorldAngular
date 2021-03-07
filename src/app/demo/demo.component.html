@@ -1,4 +1,4 @@
-<h2>demo works!</h2>
+<h2>Welkom bij {{ title }}</h2>
 <div *ngIf="isActive; else andereTemplate">
 	Dit wordt getoond als isActive 'true' is!
 </div>
@@ -25,3 +25,7 @@
 <h3 [style.color]="hasError ? 'red' : 'green'">Style Binding</h3>
 <h3 [style.color]="highlightColor">Style Binding</h3>
 <h3 [ngStyle]="titleStyles">Style Binding</h3>
+<div>
+    <img [src]="imageUrl" [alt]="imageAlt" />
+</div>
+<button (click)="onButtonClick()">Klik op mij!</button>

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo.component.css']
 })
 export class DemoComponent implements OnInit {
-
   public isActive:boolean = true;
   public studenten = ['jan', 'els', 'peter'];
   public getal:number = 2;
@@ -23,8 +22,15 @@ export class DemoComponent implements OnInit {
     color: 'blue',
     fontStyle: 'italic'
   };
+  public title:string = "HelloWorldAngular";
+  public imageUrl:string = "https://angular.io/generated/images/guide/architecture/databinding.png";
+  public imageAlt:string = "Data binding";
 
   constructor() { }
+
+  onButtonClick() {
+    alert("Er werd op deze knop gedrukt!");
+  }
 
   ngOnInit(): void {
   }
