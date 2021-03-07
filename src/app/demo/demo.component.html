@@ -1,1 +1,9 @@
-<p>demo works!</p>
+<h2>demo works!</h2>
+<div *ngIf="isActive; else andereTemplate">
+	Dit wordt getoond als isActive 'true' is!
+</div>
+<div>
+<ng-template #andereTemplate>
+	Dit wordt getoond als isActive 'false' is!
+</ng-template>
+</div>

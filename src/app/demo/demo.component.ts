@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
+  isActive:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
