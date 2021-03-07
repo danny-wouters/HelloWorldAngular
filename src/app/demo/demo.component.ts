@@ -9,6 +9,7 @@ export class DemoComponent implements OnInit {
 
   public isActive:boolean = true;
   public studenten = ['jan', 'els', 'peter'];
+  public getal:number = 2;
 
   constructor() { }
 

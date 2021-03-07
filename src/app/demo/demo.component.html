@@ -12,3 +12,9 @@
         <li>{{student}}</li>
     </span>
 </ol>
+<div [ngSwitch]="getal">
+	<p *ngSwitchCase="'0'">Je koos voor 0.</p>
+	<p *ngSwitchCase="'1'">Je koos voor 1.</p>
+	<p *ngSwitchCase="'2'">Je koos voor 2.</p>
+	<p *ngSwitchDefault>Je hebt gekozen voor {{getal}}.</p>
+</div>
