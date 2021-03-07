@@ -21,3 +21,7 @@
 <h2 class="text-special" [class]="successClass">Demo header</h2>
 <h2 [class.text-danger]="hasError">Demo header</h2>
 <h2 [ngClass]="messageClasses">Demo header</h2>
+
+<h3 [style.color]="hasError ? 'red' : 'green'">Style Binding</h3>
+<h3 [style.color]="highlightColor">Style Binding</h3>
+<h3 [ngStyle]="titleStyles">Style Binding</h3>

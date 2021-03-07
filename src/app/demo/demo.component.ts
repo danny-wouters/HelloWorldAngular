@@ -18,6 +18,11 @@ export class DemoComponent implements OnInit {
     'text-danger': this.hasError,
     'text-special': this.isSpecial
   };
+  public highlightColor = 'orange';
+  public titleStyles = {
+    color: 'blue',
+    fontStyle: 'italic'
+  };
 
   constructor() { }
 
