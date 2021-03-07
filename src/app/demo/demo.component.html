@@ -18,3 +18,6 @@
 	<p *ngSwitchCase="'2'">Je koos voor 2.</p>
 	<p *ngSwitchDefault>Je hebt gekozen voor {{getal}}.</p>
 </div>
+<h2 class="text-special" [class]="successClass">Demo header</h2>
+<h2 [class.text-danger]="hasError">Demo header</h2>
+<h2 [ngClass]="messageClasses">Demo header</h2>
