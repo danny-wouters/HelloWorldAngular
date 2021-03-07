@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
 
-  isActive:boolean = true;
+  public isActive:boolean = true;
+  public studenten = ['jan', 'els', 'peter'];
 
   constructor() { }
 
