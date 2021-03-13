@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-demo',
@@ -26,13 +27,14 @@ export class DemoComponent implements OnInit {
   public imageUrl:string = "https://angular.io/generated/images/guide/architecture/databinding.png";
   public imageAlt:string = "Data binding";
 
-  constructor() { }
+  constructor(private _loggerService: LoggerService) { }
 
   onButtonClick() {
     alert("Er werd op deze knop gedrukt!");
   }
 
   ngOnInit(): void {
+    this._loggerService.logInfo("DemoComponent is gestart!");
   }
 
 }
