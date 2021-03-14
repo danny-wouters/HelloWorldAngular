@@ -29,3 +29,16 @@
     <img [src]="imageUrl" [alt]="imageAlt" />
 </div>
 <button (click)="onButtonClick()">Klik op mij!</button>
+<br />
+<div *ngIf="autosZichtbaar; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+	<ol>
+		<span *ngFor="let auto of autos">
+			<li>{{ auto.Merk + ' ' + auto.Model }}</li>
+		</span>
+	</ol>
+	<button (click)="verbergAutos()">Verberg auto's</button>
+</ng-template>
+<ng-template #elseBlock>
+	<button (click)="toonAutos()">Toon auto's</button>
+</ng-template>

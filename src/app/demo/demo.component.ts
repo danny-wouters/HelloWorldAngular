@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggerService } from '../logger.service';
+import { Auto } from '../_models/auto';
 
 @Component({
   selector: 'app-demo',
@@ -26,8 +27,17 @@ export class DemoComponent implements OnInit {
   public title:string = "HelloWorldAngular";
   public imageUrl:string = "https://angular.io/generated/images/guide/architecture/databinding.png";
   public imageAlt:string = "Data binding";
+  public autos:Auto[];
+  public autosZichtbaar:boolean = true;
 
-  constructor(private _loggerService: LoggerService) { }
+  constructor(private _loggerService: LoggerService) {
+    this.autos = [
+      new Auto("Opel", "Astra"),
+      new Auto("Ford", "Focus"),
+      new Auto("Volkswagen", "Golf"),
+      new Auto("Renault", "Mégane")
+    ];
+  }
 
   onButtonClick() {
     alert("Er werd op deze knop gedrukt!");
@@ -37,4 +47,11 @@ export class DemoComponent implements OnInit {
     this._loggerService.logInfo("DemoComponent is gestart!");
   }
 
+  toonAutos() {
+    this.autosZichtbaar = true;
+  }
+
+  verbergAutos() {
+    this.autosZichtbaar = false;
+  }
 }
