@@ -9,10 +9,10 @@ export class AutoService {
 
   constructor() {
     this.autos = [
-      new Auto("Opel", "Astra"),
-      new Auto("Ford", "Focus"),
-      new Auto("Volkswagen", "Golf"),
-      new Auto("Renault", "Mégane")
+      new Auto(1, "Opel", "Astra"),
+      new Auto(2, "Ford", "Focus"),
+      new Auto(3, "Volkswagen", "Golf"),
+      new Auto(4, "Renault", "Mégane")
     ];
   }
 

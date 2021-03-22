@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutoService } from '../auto.service';
 import { LoggerService } from '../logger.service';
 import { Auto } from '../_models/auto';
 
@@ -30,13 +31,8 @@ export class DemoComponent implements OnInit {
   public autos:Auto[];
   public autosZichtbaar:boolean = true;
 
-  constructor(private _loggerService: LoggerService) {
-    this.autos = [
-      new Auto("Opel", "Astra"),
-      new Auto("Ford", "Focus"),
-      new Auto("Volkswagen", "Golf"),
-      new Auto("Renault", "Mégane")
-    ];
+  constructor(private _loggerService: LoggerService, private _autoService: AutoService) {
+    this.autos = this._autoService.getAutos();
   }
 
   onButtonClick() {
