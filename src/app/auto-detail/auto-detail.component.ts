@@ -29,4 +29,9 @@ export class AutoDetailComponent implements OnInit {
     let previousId = this.autoId + 1;
     this.router.navigate(["autos", previousId]);
   }
+
+  gotoAutos(): void {
+    let selectedId = this.autoId ? this.autoId : null;
+    this.router.navigate(["autos",{id: selectedId}]);
+  }
 }
