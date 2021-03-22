@@ -8,11 +8,13 @@ import { LoggerService } from './logger.service';
 import { HomeComponent } from './home/home.component';
 import { AutoListComponent } from './auto-list/auto-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AutoDetailComponent } from './auto-detail/auto-detail.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'demo', component: DemoComponent},
   { path: 'autos', component: AutoListComponent},
+  { path: 'autos/:id', component: AutoDetailComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     DemoComponent,
     HomeComponent,
     AutoListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AutoDetailComponent
   ],
   imports: [
     BrowserModule,
