@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { LoggerService } from './logger.service';
 import { HomeComponent } from './home/home.component';
+import { AutoListComponent } from './auto-list/auto-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'demo', component: DemoComponent}
+  { path: 'demo', component: DemoComponent},
+  { path: 'auto-list', component: AutoListComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
-    HomeComponent
+    HomeComponent,
+    AutoListComponent
   ],
   imports: [
     BrowserModule,
