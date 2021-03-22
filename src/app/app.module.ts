@@ -7,11 +7,13 @@ import { DemoComponent } from './demo/demo.component';
 import { LoggerService } from './logger.service';
 import { HomeComponent } from './home/home.component';
 import { AutoListComponent } from './auto-list/auto-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'demo', component: DemoComponent},
-  { path: 'autos', component: AutoListComponent}
+  { path: 'autos', component: AutoListComponent},
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -19,7 +21,8 @@ const appRoutes: Routes = [
     AppComponent,
     DemoComponent,
     HomeComponent,
-    AutoListComponent
+    AutoListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
