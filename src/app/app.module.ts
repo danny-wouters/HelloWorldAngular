@@ -11,7 +11,7 @@ import { AutoListComponent } from './auto-list/auto-list.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'demo', component: DemoComponent},
-  { path: 'auto-list', component: AutoListComponent}
+  { path: 'autos', component: AutoListComponent}
 ];
 
 @NgModule({
