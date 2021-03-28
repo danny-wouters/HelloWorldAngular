@@ -1,0 +1,6 @@
+<h2>Zoek gegevens over een film</h2>
+
+  <input type="text" placeholder="Film" [(ngModel)]="filmNaam">
+  <p>{{filmNaam}}</p>
+  <button mat-raised-button color="primary" (click)="zoekFilm()">Film zoeken</button>
+  <p>{{response | json}}</p>
