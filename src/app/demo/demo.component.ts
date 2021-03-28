@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AutoService } from '../auto.service';
+import { AutoService } from '../auto/_services/auto.service';
 import { LoggerService } from '../logger.service';
-import { Auto } from '../_models/auto';
+import { Auto } from '../auto/_models/auto';
 
 @Component({
   selector: 'app-demo',
