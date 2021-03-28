@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { LoggerService } from './logger.service';
 import { HomeComponent } from './home/home.component';
-import { AutoListComponent } from './auto-list/auto-list.component';
+import { AutoListComponent } from './auto/auto-list/auto-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AutoDetailComponent } from './auto-detail/auto-detail.component';
+import { AutoDetailComponent } from './auto/auto-detail/auto-detail.component';
+import { AutoModule } from './auto/auto.module';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,12 +24,11 @@ const appRoutes: Routes = [
     AppComponent,
     DemoComponent,
     HomeComponent,
-    AutoListComponent,
-    PageNotFoundComponent,
-    AutoDetailComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    AutoModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [LoggerService],
