@@ -14,6 +14,8 @@ import { AutoDetailComponent } from './auto/auto-detail/auto-detail.component';
 import { AutoModule } from './auto/auto.module';
 import { FilmModule } from './film/film.module';
 import { FilmSearchComponent } from './film/film-search/film-search.component';
+import { BestellingListComponent } from './bestelling/bestelling-list/bestelling-list.component';
+import { BestellingModule } from './bestelling/bestelling.module';
 
 
 const appRoutes: Routes = [
@@ -22,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'autos', component: AutoListComponent},
   { path: 'autos/:id', component: AutoDetailComponent},
   { path: 'film', component: FilmSearchComponent},
+  { path: 'bestellingen', component: BestellingListComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -35,6 +38,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AutoModule,
+    BestellingModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     FormsModule,
     HttpClientModule
