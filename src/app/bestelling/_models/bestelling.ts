@@ -1,5 +1,5 @@
 export class Bestelling {
-    BestellingId: number;
-    Artikel: string;
-    Prijs: number;
+    bestellingID: number;
+    artikel: string;
+    prijs: number;
 }
