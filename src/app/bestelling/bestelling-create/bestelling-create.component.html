@@ -1,0 +1,20 @@
+<h2>Nieuwe bestelling</h2>
+<form (ngSubmit)="onSubmit()" #bestellingForm="ngForm">
+  <p>
+      <label for="artikel">Artikel</label><br />
+      <input id="artikel" name="voornaam" required [(ngModel)]="bestelling.artikel" minlength="6" />
+  </p>
+  <p>
+      <label for="prijs">Prijs</label><br />
+      <input id="prijs" name="prijs" type="number" required [(ngModel)]="bestelling.prijs" />
+  </p>
+
+  <p>
+      <button type="submit" [disabled]="!bestellingForm.form.valid || submitted">
+        Submit
+      </button>
+  </p>
+</form>
+<p>
+    {{ postResponse | json }}
+</p>

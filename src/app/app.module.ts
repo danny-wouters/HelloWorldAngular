@@ -16,6 +16,7 @@ import { FilmModule } from './film/film.module';
 import { FilmSearchComponent } from './film/film-search/film-search.component';
 import { BestellingListComponent } from './bestelling/bestelling-list/bestelling-list.component';
 import { BestellingModule } from './bestelling/bestelling.module';
+import { BestellingCreateComponent } from './bestelling/bestelling-create/bestelling-create.component';
 
 
 const appRoutes: Routes = [
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'autos/:id', component: AutoDetailComponent},
   { path: 'film', component: FilmSearchComponent},
   { path: 'bestellingen', component: BestellingListComponent},
+  { path: 'bestellingen/nieuw', component: BestellingCreateComponent},
   { path: '**', component: PageNotFoundComponent}
 ];
 

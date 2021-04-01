@@ -21,4 +21,8 @@ export class BestellingService {
       )
     );
   }
+
+  addBestelling(bestelling: Bestelling): Observable<any> {
+    return this._http.post(environment.apiUrl + 'bestelling', bestelling);
+  }
 }
