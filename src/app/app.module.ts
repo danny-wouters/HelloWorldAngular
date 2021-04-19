@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
@@ -17,6 +18,10 @@ import { FilmSearchComponent } from './film/film-search/film-search.component';
 import { BestellingListComponent } from './bestelling/bestelling-list/bestelling-list.component';
 import { BestellingModule } from './bestelling/bestelling.module';
 import { BestellingCreateComponent } from './bestelling/bestelling-create/bestelling-create.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './_helpers/auth-guard';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 
 const appRoutes: Routes = [
@@ -25,8 +30,9 @@ const appRoutes: Routes = [
   { path: 'autos', component: AutoListComponent},
   { path: 'autos/:id', component: AutoDetailComponent},
   { path: 'film', component: FilmSearchComponent},
-  { path: 'bestellingen', component: BestellingListComponent},
-  { path: 'bestellingen/nieuw', component: BestellingCreateComponent},
+  { path: 'bestellingen', component: BestellingListComponent, canActivate: [AuthGuard]},
+  { path: 'bestellingen/nieuw', component: BestellingCreateComponent, canActivate: [AuthGuard]},
+  { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -35,7 +41,8 @@ const appRoutes: Routes = [
     AppComponent,
     DemoComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +50,15 @@ const appRoutes: Routes = [
     BestellingModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [LoggerService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    LoggerService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
